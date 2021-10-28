@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>HTML</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="estilo.css">
+</head>
+
+<body>
+
+  <script>
+
+    //Write a script that allow us to ...
+    //a) Show the recent term (1st, 2nd, 3rd or 4th).
+
+    //var date = new Date(year, month, day);
+    //date (2021, 10, 12);
+
+    var d = new Date();
+
+    function trimestreActual(){
+
+        if (d.getMonth() == 0 || d.getMonth() == 1 || d.getMonth() == 2){
+            document.write("Estam al primer trimestre");
+        }
+        if (d.getMonth() == 3 || d.getMonth() == 4 || d.getMonth() == 5){
+            document.write("Estam al segon trimestre");
+        }
+        if (d.getMonth() == 6 || d.getMonth() == 7 || d.getMonth() == 8){
+            document.write("Estam al tercer trimestre");
+        }
+        if (d.getMonth() == 9 || d.getMonth() == 10 || d.getMonth() == 11){
+            document.write("Estam al quart trimestre");
+        }
+
+
+    }
+
+   trimestreActual();
+    
+
+
+
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<head>
+    <meta charset="utf-8">
+    <title>HTML</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="*.css">
+  
+  <!-- JAVASCRIPT FUNCIONS -->
+  <script>
+  
+      //a) When you click on an hyper-link, a random value between 0 and 2 is generated. If the new value is 0 then you must
+      // load Google web page, if the value is 1 then you must load the Yahoo web page and if the value is 2 then you must load Bing web page. In order to
+      // generate a random value you can use the Math object.
+      
+      function randomPage(){
+          var num = Math.random() * 3;
+    
+          var link = "";
+
+
+          if (num == 0){
+            link = "http://www.google.com"
+          }else if (num == 1){
+              link = "http://www.yahoo.com"
+          }else if (num == 2){
+              link = "http://www.bing.com"
+          }
+
+          window.location=link;
+      }
+
+      //b) When you press a button a pop-up window appears. This window must have the monitor full width and the monitor half height.
+      function promptWindows(){
+      
+        open('','','status=yes,width=1929 ,height=540,menubar=no'); 
+    
+      }
+      
+  
+  </script>
+  
+  </head>
+  
+  <body>
+  
+      <!-- JAVASCRIPT CODE-->
+      <script>
+          //c) Show an alert message showing if the browser has enabled or disabled cookies.
+          document.write('CookieEnabled:' + navigator.cookieEnabled + '<br><hr>');
+      </script>
+  
+  <a href="javascript:randomPage()">Link Random</a>
+  <hr>
+  <input type="button" onclick="promptWindows()" value="Windows">
+  
+      
+    
+  </body>
+  </html>

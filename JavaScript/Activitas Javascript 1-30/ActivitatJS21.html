@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>HTML</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="*.css">
+
+<!-- JAVASCRIPT FUNCIONS -->
+<script>
+
+    function passEqual(){
+
+        var pas1 = document.getElementById("pas1").value;
+        var pas2 = document.getElementById("pas2").value;
+
+        var iguals = false;
+
+        if (pas1 == pas2){
+            iguals = true;
+        }
+
+        alert (iguals)
+
+    }
+
+</script>
+
+</head>
+
+<body>
+
+    <!-- JAVASCRIPT CODE-->
+    <script>
+
+
+
+
+    </script>
+
+    <h3>APARTAT A</h3>
+  <form>
+
+        <label for="pas1">Introdueix password</label>
+        <input type="password" id="pas1"></p>
+        <label for="pas2">Repeteix password</label>
+        <input type="password" id="pas2"></p>
+        
+        <input type="button" value="Son iguales?" onclick="passEqual()">
+
+    </form>
+    <hr>
+    
+
+
+</body>
+</html>

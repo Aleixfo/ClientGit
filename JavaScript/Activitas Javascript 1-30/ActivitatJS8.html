@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Activitat8</title>
+</head>
+<body>
+
+<!-- Activitat 8 -->
+
+
+<script>
+
+ // APARTAT A Enter a date, and print a message "Today is Christmas" if the date is this year's Christmas. (Date must be entered in parts: day, month and year).
+
+ document.write("<h3>APARTAT A</h3>")
+
+ var month = 12;
+ var day = 24;
+ var year = 2021;
+
+ if (month === 12 && day === 24 && year === 2021){
+   document.write("Today is chirstmas");
+ }else{
+   document.write("Today is not christmas");
+ }
+
+ document.write("<br><br>");
+
+ // APARTAT B Enter three different numbers and if all of them are less than 10 print the message "All the numbers are less than 10".
+
+ document.write("<h3>APARTAT B</h3>")
+
+  var num1, num2, num3;
+
+  num1 = 2;
+  num2 = -4;
+  num3 = 9;
+
+  if (num1 < 10 && num2 < 10 && num3 < 10){
+    document.write("Els 3 numeros son mes petits que 10, els 3 digits son "+num1+num2+num3);
+  }else{
+    document.write("Algun dels numeros es mes gran que 10, els numeros son "+num1+num2+num3);
+  }
+
+   document.write("<br><br>");
+
+   // APARTAT C Enter two numbers representing a coordinate point (x, y) and then print a message informing about where the point is placed:
+
+ document.write("<h3>APARTAT C</h3>")
+
+ var x = 43.4;
+ var y = 98.1;
+
+ if (x > 0 && y > 0){
+   document.write("First Quadrant");
+ }else{
+   if (x < 0 && y > 0){
+     document.write("Second Quadrant");
+   }else{
+     if (x < 0 && y < 0){
+       document.write("Third Quadrant");
+     }else{
+       if (x > 0 && y < 0){
+         document.write("Fourth Quadrant");
+       }
+     }
+   }
+ }
+
+ document.write("<br><br>");
+
+ // APARTAT D Enter two numbers representing the worker's salary and years in the company, calculate and print the salary of the next year according to the following conditions:
+
+ document.write("<h3>APARTAT D</h3>");
+
+ var salary = 950;
+ var yearsC = 8;
+
+ if (salary < 500 & yearsC >= 10){
+   document.write("El salari incrementara 20%, cobrara uns "+(salary*0.2)+" euros més");
+ }else{
+   if (salary < 500 && yearsC < 10){
+     document.write("El salari incrementara un 5%, cobrara uns "+(salary*0.05)+" euros més");
+   }else{
+     if (salary>= 500){
+       document.write("El salari no incrementara, cobrara el mateix");
+     }
+   }
+ }
+
+
+ document.write("<br><br>");
+
+ // APARTAT E Enter three different numbers and if at least one of them is less than 10 print the message "Some numbers are less than 10".
+
+ document.write("<h3>APARTAT E</h3>");
+
+  var first = 4;
+  var second = 12;
+  var third = 10;
+
+  if (third < 10){
+    document.write("Some number is less than 10");
+  }else{
+    document.write("No number is less than 10");
+  }
+
+
+
+
+
+</script>
+
+</body>
+</html>

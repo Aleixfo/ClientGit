@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>HTML</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="*.css">
+
+<!-- JAVASCRIPT FUNCIONS -->
+<script>
+
+    //a) Enter a username and password and then show an alert message if the password is shorter than 7 characters or longer than 20 characters.
+    function checkPass(){
+        var pass = document.getElementById("password").value;
+
+        if (pass.length > 20 || pass.length < 7){
+            alert("La contrasenya no es correcte!");
+        }
+    }
+
+</script>
+
+</head>
+
+<body>
+
+    <!-- JAVASCRIPT CODE-->
+    <script>
+
+    </script>
+
+    <form>
+        <label for="username">Nom d'usuari</label>
+        <input type="text" id="username" onFocus=""  value=""><br>
+        <label for="password">Contrasenya</label>
+        <input type="password" id="password" onFocus="" onBlur="checkPass()" value="">
+        <br>
+        <input type="button" value="Confirmar">
+    </form>
+
+    
+  
+</body>
+</html>

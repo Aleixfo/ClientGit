@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>HTML</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="estilo.css">
+</head>
+
+<body>
+
+  <script>
+
+    //A Create an 8 elements vector and introduce 8 numbers. Finally it must print:
+
+    /*
+    Total sum of the 8 numbers.
+    Average of the 8 numbers.
+    Total sum of the elements higher than 5.
+    How many numbers are higher than 5. */
+
+    var numeros = new Array(2,6,3,7,4,6,4,5);
+
+    function sumarArray(numeros){
+
+        var suma;
+
+        for (var i=0;i<numeros.length ;i++){
+            suma = suma + numeros[i];
+        }
+
+        document.write(suma);
+
+    }
+
+    function mitjanaArray(numeros){
+
+        var suma;
+
+        for (var i=0;i<numeros.length ;i++){
+            suma = suma + numeros[i];
+        }
+
+        document.write(suma/8);
+
+    }
+
+    function sumaMesde5(numeros){
+
+        var suma;
+
+        for (var i=0;i<numeros.length ;i++){
+            if (numeros[i] >= 5){
+            suma = suma + numeros[i];
+            }
+        }
+
+        document.write(suma);
+
+    }   
+
+    function sumaMesde5(numeros){
+
+        var cont;
+
+        for (var i=0;i<numeros.length ;i++){
+            if (numeros[i] >= 5){
+            cont++;
+            }
+        }
+
+        document.write(cont);
+
+    }  
+
+    sumaMesde5();
+
+    //B Enter a number N in order to create a N-sized vector, then enter 2 numbers and place them in the first
+    // two positions in the vector. Finally fill every K position in the vector with the values of positions K-1 and K-2. Finally print the content of the vector and its total sum.
+
+
+    function rellenarArray(){
+
+    var arrayLength = parseInt(prompt("Introdueix mida de l'array"));
+
+    var num1 = 2;
+    var num2 = 3;
+
+    arrayLength[0] = num1;
+    arrayLength[1] = num2;
+
+    while (arrayLength[arrayLength.length]!== undefined){
+        for (var j=2;j<arrayLength.length;j++){
+            arrayLength[i]=num1;
+            arrayLength[i+1]=num2;
+        }
+    }
+
+}
+
+
+  </script>
+
+</body>
+</html>

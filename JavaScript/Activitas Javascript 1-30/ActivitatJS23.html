@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>HTML</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="*.css">
+
+<!-- JAVASCRIPT FUNCIONS -->
+<script>
+
+    //a) Check three different checkbox elements (Football, Tennis, and Karate). Finally when we press a button an alert message must appear showing the selected sports.
+    function showSports(){
+        var sports = "";
+
+        if (document.getElementById("football").checked){
+            sports+= "Futbol ";
+        }
+        if (document.getElementById("tenis").checked){
+            sports+= "Tenis  ";
+        }
+        if (document.getElementById("karate").checked){
+            sports+= "Karate ";
+        }
+
+        alert(sports)
+
+    }
+
+</script>
+
+</head>
+
+<body>
+
+    <!-- JAVASCRIPT CODE-->
+    <script>
+
+
+
+
+    </script>
+
+    <form>
+
+        <input type="checkbox" id="football">Football
+
+        <br>
+
+        <input type="checkbox" id="tenis">Tenis
+
+        <br>
+
+        <input type="checkbox" id="karate">Karate
+
+        <br>
+
+        <input type="button" value="Finalitza" onClick="showSports()">
+
+    </form>
+  
+</body>
+</html>

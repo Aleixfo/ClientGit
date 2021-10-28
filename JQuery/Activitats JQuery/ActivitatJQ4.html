@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/Client/JQuery/jqueryLibrary.js"></script>
+    <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>-->
+
+</head>
+<body>
+
+
+    <table id="taula1" style="border: 3px solid black; width: 100px;">
+
+        <tr id="fila1">
+            <td>1</td>
+        </tr>
+        <tr id="fila2">
+            <td>2</td>
+        </tr>
+        <tr id="fila3">
+            <td>3</td>
+        </tr>
+
+
+    </table>
+
+    <table id="taula2" style="border: 3px solid green; width: 100px;">
+
+        <tr id="fila4">
+            <td>4</td>
+        </tr>
+        <tr id="fila5">
+            <td>5</td>
+        </tr>
+        <tr id="fila6">
+            <td>6</td>
+        </tr>
+
+
+    </table>
+
+
+    
+    <script>
+
+    $(document).ready(function(){   
+
+
+    /* Create a web page with two tables. Every table with 3 rows. And write a script using
+    jQuery to change the background colour when you click on a row y in the first table, and to
+    change the text size in the second table. */
+
+    var t1 = $("#taula1 tr");
+    var t2 = $("#taula2 tr");
+    
+    
+    t1.click(function(){
+        t1.css("background-color" , "black");
+    });
+
+    t2.click(function(){
+        t2.css("font-size" , "10px");
+    });
+
+   
+
+    });
+
+
+    </script>
+
+
+
+
+</body>
+</html>

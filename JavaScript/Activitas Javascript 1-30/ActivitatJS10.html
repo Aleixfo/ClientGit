@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Activitat 10</title>
+</head>
+
+<body>
+
+<!-- ACTIVITAT 10
+
+a) Print the numbers from 1 to 50. Then print the numbers from 50 to 1. And finally print the numbers from -50 to 0.
+
+b) Print the pair numbers from 2 to 100 (2, 4, 6, ...98, 100).
+
+c) Print 25 numbers in the series 11, 22, 33, 44...
+
+d) Print the 7 multiples from 7 to 70 (7, 14, 21, ..., 63, 70).
+
+e) Enter 10 students' marks and then print how many students have passed and how many students have failed.
+
+f) Enter 5 people heights and then print the average height.
+
+g) Enter 5 workers' salaries in a company, and then print how many workers' salaries are between 500€ and 1000€, how many workers' salaries are bigger than 1000€ and the sum of all the salaries.
+
+h) Enter 2 lists of 3 numbers every one, and print what list has a bigger sum. You can use two or more nested repetitive structures.
+
+i) Enter 5 numbers and then print how many numbers are pair and how many numbers are odd. Use the operator %.
+
+-->
+
+<script>
+
+  // APARTAT A
+
+  document.write("<h3>APARTAT A</h3>");
+
+  var x = 1;
+
+  while (x<=50){
+    document.write(" "+x+" ");
+    x++;
+  }
+
+  x--;
+
+  document.write("<br><br>");
+
+  while (x > 0){
+    document.write(" "+x+" ");
+    x--;
+  }
+
+  document.write("<br><br>");
+
+  while (x > -50){
+    document.write(" "+x+" ");
+    x--;
+  }
+
+  document.write("<br><br>");
+
+  // APARTAT B
+
+  document.write("<h3>APARTAT B</h3>");
+
+  var nume = 0;
+
+  while (nume <= 100){
+
+    document.write(" "+nume+" ");
+    nume=nume+2;
+
+  }
+
+
+  document.write("<br><br>");
+
+  // APARTAT C
+
+  document.write("<h3>APARTAT C</h3>");
+
+  var y = 11;
+  var iterador = 24;
+
+  while (iterador > 0){
+
+    document.write(" "+y+" ");
+    y = y+11;
+    iterador--;
+
+  }
+
+  document.write("<br><br>");
+
+  // APARTAT D
+
+  document.write("<h3>APARTAT D</h3>");
+
+  var z = 7;
+  var iterado = 9;
+
+  while (iterado >= 0){
+
+    document.write(" "+z+" ");
+    z = z+7;
+    iterado--;
+
+  }
+
+  document.write("<br><br>");
+
+  // APARTAT E
+
+  document.write("<h3>APARTAT E</h3>");
+
+  var altura1 = 180;
+  var altura2 = 175;
+  var altura3 = 151;
+  var altura4 = 164;
+  var altura5 = 171;
+
+  var average = (altura1+altura2+altura3+altura4+altura5) / 5;
+
+  document.write("L'altura mitjana es "+average+" cm")
+
+
+  document.write("<br><br>");
+
+  // APARTAT G
+
+  document.write("<h3>APARTAT G</h3>");
+
+  let salarys = [784, 4511, 653, 1302, 2314];
+  var b = 0;
+  var a = 0;
+  var suma= 0;
+
+  for (var i = 0; i<5; i++){
+    if (salarys[i] > 500 && salarys[i] < 1000){
+      b++;
+    }
+    if (salarys[i] > 1000){
+      a++;
+    }
+    suma = suma + salarys[i];
+  }
+
+  document.write(b+" salaris estan entre 500 i 1000 euros.<br>");
+  document.write(a+" salaris son mes alts que 1000 euros.<br>")
+  document.write("La suma dels salaris es "+suma)
+
+
+  document.write("<br><br>");
+
+  // APARTAT H
+
+  document.write("<h3>APARTAT H</h3>");
+
+  let l1 = [4, 6, 19];
+  let l2 = [21, 1, 8];
+
+  if ((4+6+19)>(21+1+8)){
+    document.write("La llista numero 1 es mes gran que la 2");
+  }else{
+    document.write("La llista numero 2 es mes gran que la 1");
+  }
+
+
+
+  document.write("<br><br>");
+
+  // APARTAT H
+
+  document.write("<h3>APARTAT H</h3>");
+
+  let numeros = [9976,54,122,192,18];
+  var odds=0;
+  var even=0;
+
+
+  for (var i = 0; i<numeros.length;i++){
+    if (numeros[i]/2 %0){
+      even++;
+    }else
+    {
+      odds++;
+    }
+  }
+
+  document.write("Hi ha "+odds+" numeros impars<br>");
+  document.write("Hi ha "+even+" numeros pars");
+
+
+</script>
+
+</body>
+</html>

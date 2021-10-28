@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Activitats JavaScript</title>
+    <!-- <link rel="stylesheet" href="*"> -->
+    <script src="cotxo.js"></script>
+    <!-- CODI JAVASCRIPT INTERN -->
+    <script>
+
+        //Declaram array llista de cotxos i introduim 2 entrades.
+        var llista = [];
+        llista [0] = new Cotxo ("4753 HLM", "Volskwagen", "Blanc", 10000);
+        llista [1] = new Cotxo ("2376 HDG", "Golf", "Blanc", 12000);
+
+        //Funcio que imprimeix la llista
+        function printLlista(){
+            var txt="";
+            for(var i=0;i<llista.length;i++){
+                txt+="<li>"+llista[i].info()+"</li>";
+            }
+            return txt;
+        }
+
+        //Funcio que crea un objecte Cotxo
+        function crearCotxo(){
+            var matr = document.getElementById("matricula").value;
+            var mod = document.getElementById("model").value;
+            var col = document.getElementById("color").value;
+            var pvp = document.getElementById("preu").value;
+
+            return new Cotxo (matr, mod, col, pvp);
+        }
+
+        //Funcions Botons
+        function insertaInici(){
+            var c = crearCotxo();
+            llista.unshift(c);
+            document.getElementById("llista").innerHTML = printLlista();
+            document.getElementById("numCotxos").innerHTML = llista.length;
+        }
+
+        function insertaFinal(){
+            var c = crearCotxo();
+            llista.push(c);
+            document.getElementById("llista").innerHTML = printLlista();
+            document.getElementById("numCotxos").innerHTML = llista.length;
+        }
+
+        function borraInici(){
+            llista.shift();
+            document.getElementById("llista").innerHTML = printLlista();
+            document.getElementById("numCotxos").innerHTML = llista.length;
+        }
+
+        function borraFinal(){
+            llista.pop();
+            document.getElementById("llista").innerHTML = printLlista();
+            document.getElementById("numCotxos").innerHTML = llista.length;
+        }
+
+        function ordenaAsc(){
+            llista.sort(function(a, b){
+                return a.preu - b.preu;
+            });
+            document.getElementById("llista").innerHTML = printLlista();
+            document.getElementById("numCotxos").innerHTML = llista.length;
+        }
+
+        function ordenaDesc(){
+            llista.sort(function(a, b){
+                return b.preu - a.preu;
+            });
+            document.getElementById("llista").innerHTML = printLlista();
+            document.getElementById("numCotxos").innerHTML = llista.length;
+        }
+
+        function hihaSeat(){
+
+            var hiha=false;
+
+            for (c in llista){
+                if (llista[c].marca.toUpperCase() == "SEAT"){
+                    hiha = true;
+                    break;
+                }
+            }
+            var x = hiha ? "Si" : "No";
+            alert(x+" Hi ha SEAT");
+        }
+
+        function quants(){
+
+            var quants = 0;
+
+            for (var c in llista){
+                if (llista[c].color.toUpperCase() == "BLANC"){
+                    
+                    quants++;
+                }
+            }
+
+            alert(quants+" Cotxos");
+        }
+
+        function preuEuros(){
+            for (c in llista){
+                llista[c].convert2Euros();
+            }
+            document.getElementById("llista").innerHTML = printLlista();
+            document.getElementById("numCotxos").innerHTML = llista.length;
+        }
+
+        function preuDolars(){
+            for (c in llista){
+                llista[c].convert2Dolars();
+            }
+            document.getElementById("llista").innerHTML = printLlista();
+            document.getElementById("numCotxos").innerHTML = llista.length;
+        }
+
+    </script>
+</head>
+<!-------------------------------------------------------------------------------------->
+<body>
+
+    <h1>Venta de vehicles 2ª</h1>
+
+    <p>Vehicles => <span id="numCotxos">0</span></p>
+
+    <ol id="llista"></ol>
+
+    <hr>
+
+    <!-- INPUTS DE TIPO TEXT -->
+    <input type="text" id="matricula"/> -> Matricula<br>
+    <input type="text" id="model"/> -> Model<br>
+    <input type="text" id="color"/> -> Color<br>
+    <input type="text" id="preu"/> -> Preu<br>
+
+    <hr>
+
+    <!-- BOTONS-->
+    <button id="insertar" onclick="insertaInici();">Insertar Inici</button>
+    <button id="insertar" onclick="insertaFinal();">Insertar Final</button>
+    <button id="insertar" onclick="borraInici();">Borrar Inici</button>
+    <button id="insertar" onclick="borraFinal();">Borrar Final</button>
+    <br>
+    <button id="insertar" onclick="ordenaAsc();">Ordenar Ascendentment</button>
+    <button id="insertar" onclick="ordenaDesc();">Ordenar Descendent</button>
+    <button id="insertar" onclick="hihaSeat();">SEAT?</button>
+    <button id="insertar" onclick="quants();">Quants de</button>
+    <button id="insertar" onclick="preuEuros();">Preu en €</button>
+    <button id="insertar" onclick="preuDolars();">Preu en $</button>
+
+
+    <!-- MES CODI JAVASCRIPT -->
+    <script>
+
+        document.getElementById("llista").innerHTML = printLlista();
+        document.getElementById("numCotxos").innerHTML = llista.length;
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Activitat 9</title>
+</head>
+<body>
+
+<!-- Activitat 9
+
+ Write a script that allow us to ...
+
+a) Enter one of the following words (house, table, dog, cat) and then print the translation into Spanish or Catalan.
+
+b) Enter a number and then print the corresponding month (1: January, 2: February, .... 12: December).
+
+c) Enter a number and then print the number of days of the corresponding month (January: 31, February: 28, .... December: 31).
+
+d) Enter a letter and then print "Vowel" or "Consonant" depending on the entered letter.
+ -->
+
+
+<script>
+
+  // APARTAT A
+
+  document.write("<h3>APARTAT A</h3>");
+
+  var word = "cat";
+
+  switch (word){
+
+    case 'house': document.write("Casa");
+    break;
+    case 'table': document.write("Taula");
+    break;
+    case 'dog': document.write("Ca");
+    break;
+    case 'cat': document.write("Moix");
+    break;
+    default:document.write("La paraula no es cap de les esperades");
+    break;
+  }
+
+  document.write("<br><br>");
+
+  // APARTAT B
+
+  document.write("<h3>APARTAT B</h3>")
+
+  var num = 4;
+
+  switch (num){
+
+    case 1: document.write("January");
+      break;
+    case 2: document.write("February");
+      break;
+    case 3: document.write("Març");
+      break;
+    case 4: document.write("Abril");
+      break;
+    case 5: document.write("Maig");
+      break;
+    case 6: document.write("June");
+      break;
+    case 7: document.write("July");
+      break;
+    case 8: document.write("August");
+      break;
+    case 9: document.write("September");
+      break;
+    case 10: document.write("October");
+      break;
+    case 11: document.write("November");
+      break;
+    case 12: document.write("December");
+      break;
+
+  }
+
+  document.write("<br><br>");
+
+  // APARTAT C
+
+  document.write("<h3>APARTAT D</h3>");
+
+  document.write("No entenc l'exercici");
+
+
+  document.write("<br><br>");
+
+  // APARTAT D
+
+  document.write("<h3>APARTAT D</h3>")
+
+  var letter = 'g';
+
+  switch (letter){
+
+    case 'a':document.write("Vowel");
+      break;
+    case 'e':document.write("Vowel");
+      break;
+    case 'i':document.write("Vowel");
+      break;
+    case 'o':document.write("Vowel");
+      break;
+    case 'u':document.write("Vowel");
+      break;
+    default: document.write("Consonant");
+
+
+
+  }
+
+</script>
+
+</body>
+</html>

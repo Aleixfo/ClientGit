@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Activitats JavaScript</title>
+    <link rel="stylesheet" href="*">
+</head>
+
+<body>
+
+
+    <script>
+
+        //A Create a class called Addition with 2 attributes (valeu1 and value2) and three methods (loadValue1, loadValue2 and result). Try this class to do some additions.
+
+        function addition (x, y){
+            this.value1 = x;
+            this.value2 = y;
+
+        
+            this.loadValue1 = loadValue1;
+            function loadValue1(x){
+                this.value1=x;
+            }
+            
+            this.loadValue2 = loadValue2;
+            function loadValue2(y){
+                this.value2=y;
+            }
+
+            this.result = result;
+            function result(){
+                return value1+value2;
+            }
+        }
+
+
+
+        //B Create a class called Person (name and age), a class called Company (name and top age workers).
+        //Write a script to create 2 workers and 1 company. Show how many people are able to work in this company.
+
+        function Person(name, age){
+            this.name = name;
+            this.age = age;
+        }
+
+        function Company(name, topAge){
+            this.name = name;
+            this.topAge = topAge;
+        }
+
+        var aleix = new Person("Aleix", 24);
+        var david = new Person ("David", 23);
+        var cocacola = new Company("Coca Cola", 60);
+
+        function comprovarEdad (Person, Company){
+            
+        }
+
+
+        
+
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Activitat 11</title>
+</head>
+<body>
+
+<!-- ACTIVITAT 10
+
+a) Enter positive and negative numbers until we enter the number 9999, sum all of them, print the value and print the message:
+
+"ZERO" if the value of the sum is zero.
+"POSITIVE" if the value of the sum is positive.
+"NEGATIVE" if the value of the sum is negative.
+b) Enter people information: id number, age and sex (male/female) until we enter the number 0 as ID number, and then print the following information:
+
+How many people are there?
+How many men are there? How many women are there?
+How many men are between 18 and 65 years old?
+What is the name of the oldest woman?
+What is the ID number of the youngest man?
+c) Enter bank accounts information: account number, client name and money. Calculate the sum of all the bank accounts. For each account information print the following message:
+
+"{CLIENT NAME} is the owner of {ACCOUNT NUMBER} account with {MONEY} €."
+
+-->
+
+<script>
+
+  // APARTAT A
+
+  document.write("<h3>APARTAT A</h3>");
+
+  var sumaPositius = 0;
+  var sumaNegatius = 0;
+
+  do {
+
+    var x = parseInt(prompt("Introdueix un numero positiu"));
+    var y = parseInt(prompt("Introdueix un numero negatiu"));
+
+    sumaPositius = sumaPositius + x;
+    sumaNegatius = sumaNegatius + y;
+
+  }while (x !== 999);
+
+  if (sumaNegatius+sumaPositius === 0){
+    document.write("Zero");
+  }else{
+    if(sumaNegatius+sumaNegatius > 0){
+      document.write("Positive");
+    }else{
+      if (sumaNegatius+sumaPositius < 0){
+        document.write("Negative");
+      }
+    }
+  }
+
+  document.write("<br><br>");
+
+  // APARTAT B
+
+  document.write("<h3>APARTAT B</h3>");
+
+</script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/Client/JQuery/jqueryLibrary.js"></script>
+    <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>-->
+
+</head>
+<body>
+    
+    <ul>
+        <li id="l1">Arta</li>
+        <li id="l2">Capdepera</li>
+        <li id="l3">Sant Llorenç</li>
+        <li id="l4">Son servera</li>
+    </ul>
+
+
+    <script>
+
+    $(document).ready(function(){   
+
+        /* Create a web page with an unordered list (<ul>) with 4 different list items (<li>).
+        And write a script using jQuery to hide the <li> element that yiu press. To hide an element, 
+        jQuery provides us the method hide(). */
+
+        //Function element.hide();
+
+        $("#l1").click(function (){
+            $("#l1").hide();
+
+        });
+
+        $("#l2").click(function (){
+            $("#l2").hide();
+
+        });
+
+        $("#l3").click(function (){
+            $("#l3").hide();
+
+        });
+
+        $("#l4").click(function (){
+            $("#l4").hide();
+
+        });
+
+
+    });
+
+
+    </script>
+
+
+
+
+</body>
+</html>

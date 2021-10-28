@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/Client/JQuery/jqueryLibrary.js"></script>
+    <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>-->
+
+</head>
+<body>
+
+    <h1 class="h1">Lorem, ipsum.</h1>
+    <h1 class="h2">Lorem, ipsum.</h1>
+    <h1 class="h3">Lorem, ipsum.</h1>
+    <h1 class="h4">Lorem, ipsum.</h1>
+    <h1 class="h5">Lorem, ipsum.</h1>
+
+    <p class="p1">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi, similique.</p>
+    <p class="p2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, similique!</p>
+    <p class="p3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, deleniti!</p>
+    <p class="p4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste, architecto!</p>
+    <p class="p5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, vitae.</p>
+
+    <input type="button" class="button1" value="Small">
+    <input type="button" class="button2" value="Medium">
+    <input type="button" class="button3" value="Big">
+
+
+    <script>
+
+    $(document).ready(function(){   
+
+    /*Create a web page with five different <h1> and <p> elements representing the headline and
+    summary of a newspaper article. And three different buttons to change the text font size of
+    the content in the odd paragraphs to small (10px), medium (15px) or big (20px) respectively. */
+
+    var b1 = $(".button1");
+    var b2 = $(".button2");
+    var b3 = $(".button3");
+
+    b1.click(function (){
+        $("p").css("font-size", "10px");
+    });
+
+    b2.click(function (){
+        $("p").css("font-size", "15px");
+    });
+
+    b3.click(function (){
+        $("p").css("font-size", "20px");
+    });
+
+
+
+
+
+
+
+    });
+
+
+    </script>
+
+
+
+
+</body>
+</html>

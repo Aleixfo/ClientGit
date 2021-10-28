@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/Client/JQuery/jqueryLibrary.js"></script>
+    <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>-->
+
+</head>
+<body>
+    
+    <p class="1">Lorem ipsum dolor sit amet.</p>
+
+    <input type="button" class="buttonB" value="Llevar">
+    <input type="button" id="buttonA" value="Mostrar">
+
+
+
+
+
+
+
+    <script>
+
+    //Metode ready()
+
+    //$(function() {
+    $(document).ready(function(){
+
+        //$(this).hide(); // hides the current element.
+        //$("p").hide(); // hides all <p> elements.
+        $(".test").hide(); // hides all elements with class="test".
+        $("#test").hide(); // hides the element with id="test".
+
+        //Selectors -> $()
+        //Ex. tots els elements <p> -> $("p")
+        
+        $(".buttonB").click(function(){
+            $("p").hide();
+        });
+
+        $("#buttonA").click(function(){
+            $("p").show();
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    });
+
+  
+    /*$.noConflict();
+    jQuery(document).ready(function($){
+
+        $("button").click(function(){
+
+            $("p").text("jQuery is still working!");
+        });
+    });*/
+
+    </script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>HTML</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="estilo.css">
+</head>
+
+<body>
+ 
+  <script>
+
+    //A Receives three numbers and returns the minimum.
+    var num1, num2, num3, num4, num5;
+
+    function retornarMinim(num1, num2, num3){
+
+        if(num1 < num2 && num1 < num3){
+            return num1;
+        }
+        if(num1 > num2 && num2 < num3){
+            return num2;
+        }
+        if(num1 > num3 && num2 > num3){
+            return num3;
+        }
+    }
+
+    document.write(retornarMinim(3, 5, 8));
+
+    //B Receives three numbers and prints them orderly ascendent.
+    function ordenarEnters (num1, num2, num3){
+
+        if (num1 < num2 && num1 < num3){
+            document.write(num1);
+            if (num2 < num3){
+                document.write(num2);
+                document.write(num3);
+            }else{
+                document.write(num3);
+                document.write(num2);
+            }
+        }
+        if(num1 > num2 && num2 < num3){
+            document.write(num2);
+            if (num1 < num3){
+                document.write(num1);
+                document.write(num3);
+            }else{
+                document.write(num3);
+                document.write(num1);
+            }
+        }
+        if(num1 > num3 && num2 > num3){
+            document.write(num3);
+            if (num2 < num1){
+                document.write(num2);
+                document.write(num1);
+            }else{
+                document.write(num1);
+                document.write(num2);
+            }
+        }
+
+
+    }
+
+    document.write(ordenarEnters(10,7,8));
+
+    //C Receives the side of a square and returns its perimeter.
+    function calcularPerimetreCuadrat(num1){
+        return "El perimetre del quadrat es "+ (num1 * 4);
+    }
+    
+    document.write(calcularPerimetreCuadrat(3));
+
+
+    //D Receives a number and returns how many digits it has
+    function numeroDigits(num1){
+
+        return num1.size;
+
+    }
+
+    document.write(numeroDigits(900));
+
+    //E Receives three numbers and returns the average.
+    function calcularMitjana(num1, num2, num3){
+        return (num1+num2+num3)/3;
+    }
+
+    document.write(calcularMitjana(4,6,5));
+
+    //F  Let us enter five numbers and return the sum.
+    function sumar5Numeros(num1, num2, num3, num4, num5){
+        return num1+num2+num3+num4+num5;
+    }
+
+    document.write(sumar5Numeros(4,6,2,9,3));
+
+
+
+  </script>
+</body>
+</html>
