@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <title>Activitat 13</title>
+
+    <style>
+
+        .main {
+            width: 200px;
+            height: 200px;
+            background-color: beige;
+        }
+       
+
+    </style>
+</head>
+<body>
+
+    <div class="main">
+
+        <p id="X">Coordenada X = </p>
+        <p id="Y">Coordenada Y = </p>
+
+        <p id="sortida">Mouse out of the DIV</p>
+
+    </div>
+
+
+
+
+    
+    <script>
+
+        /* Create a div with a width and height of 200 pixels. Then the mouse position must
+        be displayed when the mouse cursor is over this div. And a message "Mouse out of
+        the DIV" must be displayed when the mouse cursor isn't inside the div.*/
+
+        function inner(){
+            $("#X").css("display", "block");
+            $("#Y").css("display", "block");
+            $(".main").css("display", "hidden");
+        }
+
+        function out(){
+            $("#X").css("display", "hidden");
+            $("#Y").css("display", "hidden");
+            $(".main").css("display", "block");
+        }
+
+        $(document).ready(function(){   
+
+            var x;
+            x = $(".main");
+            x.mousemove(moveMouse);
+
+        });
+
+        function moveMouse(){
+
+            var y;
+            var z;
+            var surt;
+            y = $("#X");
+            y.text("Coordenada X = " + event.clientX);
+            z = $("#Y");
+            z.text("Coordenada Y =" + event.clientY);
+            var surt = $(".sortida");
+
+            $(".main").hover(inner, out);
+
+            
+
+        }
+
+
+
+
+
+    </script>
+
+    
+</body>
+</html>

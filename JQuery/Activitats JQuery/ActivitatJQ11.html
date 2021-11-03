@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <title>Activitat 11</title>
+
+    <style>
+
+        table {
+            border: 2px solid black;
+        }
+
+        td {
+            border: 2px solid black;
+        }
+
+        tr {
+            border: 2px solid black;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <table style="border: 2px solid black;width: 50%;height: 100px;">
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+
+
+
+    
+    <script>
+
+        /*Create a table with 2 rows and two columns. When you move the cursor over a cell,
+        this must change its background colour, and when you move out the cursor from the cell,
+        this must change to its original background colour.*/
+
+        $(document).ready(function(){   
+
+            $("td").mouseover(function(){
+                $(this).css("background-color", "black");
+            });
+
+            $("td").mouseout(function(){
+                $(this).css("background-color", "white");
+            });
+
+        });
+
+        
+
+
+    </script>
+
+    
+</body>
+</html>
