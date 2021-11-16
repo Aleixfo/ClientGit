@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studing JQuery</title>
+    <!-- Linkear Llibreria JQ -->
+    <script src="/Client/JQuery/jqueryLibrary.js"></script>
+    <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>-->
+    <!--<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.10.1.min.js"></script>-->
+    <script src="..."></script>
+
+</head>
+<body>
+
+
+    <p class="p1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, similique.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, officiis.</p>
+    
+    <script>
+
+    //JQuery es una llibreria de JavaScript, aquesta llibreria simplifica el codi de javascript en gran mesura i es facil d'entendre i utilitzar
+    //Existeixen altres llibreries/frameworks de javascript pero JQuery es el més popular entre altres coses que el fan el millor.
+    //Es necessari tenir coneixements de HTML i CSS i obviament de JavaScript tambe.
+    //Conte les seguents caracteristiques: 1. HTML/DOM i CSS manipulation 2. HTML event methods 3. Effects and animations 4. AJAX 5. Utilities
+
+
+    //$(function(){ });
+
+    $(document).ready(
+        
+        function(){
+
+            //noConflict() Method -> Metode que s'utilitza perque no hi hagi conflictes entre sintaxis quan s'utilitzen mes frameworks de javascript.
+            var jq = $.noConflict();
+
+            //Amb jQuery podem seleccionar un element HTML i fer alguna accio sobre ell.
+            //La sintaxi es -> $(selector).action()
+            //Exemple ->       $("p").click(QUE FA);
+
+            //Funcio de prova, quan es façi click (1era Funcio) sobre el contingut del paragraf aquest s'amagara (2na Funcio)
+            jq("p").click(function(){
+                jq(this).hide();
+            });
+            //Nota: Si posam this vol dir l'element actual (seleccionat a algun lloc de la pagina, si canviessim this per p quan feim click a un paragraf s'amagen tots els paragrafs.)
+
+            //(this) -> Element actual | ("*") -> Tots els elements | ("a[target != '_blank']") -> Tots els elements a que no estiguien en blanc
+            //("ul li:first-child") ->  Selecciona el primer li del primer ul | (":button") -> Selecciona tots els buttons i els inputs type="button"
+
+            //EVENTS - DOM EVENTS
+            //Mouse-Events -> click - dblclick - mouseenter - mouseleave - mousedown - mouseup
+            //KeyBoard-Events -> keypress - keydown - keyup
+            //Form-Events -> submit - change - focus - blur 
+            //Document/Window-Event -> load - resize - scroll - unload
+
+            //hover combine mouseenter and mouseleave
+            jq(".p2").hover(
+
+                function () {
+                    alert("Hola");
+                },
+                function () {
+                    alert("Adeu");
+                }
+
+            );
+
+            //focus executa el codi quan el camp del formulari reb el focus
+            jq("input").focus(
+
+                function () {
+
+                    jq(this).css("background", "#cccccc");
+
+
+                }
+
+            );
+
+            //blur el contrari que el focus, quan perd el focus s'executa.
+            jq("input").blur(
+
+                function () {
+
+                    jq(this).css("background", "#cccccc");
+
+
+                }
+
+            );
+
+
+
+
+        }
+    
+    );
+
+
+    </script>
+
+
+
+
+</body>
+</html>

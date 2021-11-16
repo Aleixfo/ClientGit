@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studing JQuery</title>
+    <script src="/Client/JQuery/jqueryLibrary.js"></script>
+
+</head>
+<body>
+
+
+
+    <p class="p1"><bold>a  a  </bold>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, natus?</p>
+    <hr>
+    <input type="button" id="btn1" value="TEXT">
+    <input type="button" id="btn2" value="HTML">
+    <input type="button" id="btn3" value="VALeeee">
+    <input type="button" id="btn4" value="ATTR">
+    <hr>
+    <a id="google" href="googdasdasdsle.com">Google</a>
+
+    
+    <script>
+
+    $(document).ready(
+        
+        function(){
+
+            
+            //DOM Methods
+            //text() - Set or return text content of element
+            //html() - Set or return the content of element (incluint les etiquetes HTML TOT*)
+            //val() - Set or return the value of form fields (Camps de formulari)
+            //attr() - To get attrivute value
+
+            //text()
+            /*$("#btn1").click(
+
+                function () {
+                    alert("Text: "+$(".p1").text());
+                }
+            );*/
+
+            $("#btn1").click(
+
+                function () {
+                    $(".p1").text("HOLA");
+                }
+            );
+
+            //html()
+            $("#btn2").click(
+
+                function () {
+                    alert("HTML: "+$(".p1").html());
+                }
+            );
+
+            function pressButton1() {
+                $("body").html('<form>User Name:<input type="text" id="name"><br>Password:<input type="text" id="password"><br><input type="submit" value="Send"></form>');
+            }
+
+            //val()
+            $("#btn3").click(
+
+                
+                function () {
+                    alert("Value: "+$("#btn3").val());
+                }
+            );
+
+            //attr()
+            $("#btn4").click(
+
+                function () {
+                    alert($("#google").attr("href"));
+                }
+                //O amb el set de latribut
+                /*function () {
+                    alert($("#google").attr("href", "google.com"));
+                }*/
+                //Eliminar atribut -> removeAttr("atribur a eliminar")
+                /*function () {
+                    removeAttr("href");
+                }*/
+            );
+
+
+                //ADD i REMOVE methods
+                //apend() -> Insert content at the end of selected element
+                //prepend() -> Insert content at the beggining of the selected element
+                //after() -> Insert content after the selected elements
+                //before() -> Insert content before the select elements
+
+
+   
+
+        }
+    
+    );
+
+
+    </script>
+
+
+
+
+</body>
+</html>
