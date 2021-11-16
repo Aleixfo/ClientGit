@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Afegir i Eliminar Classes</title>
+    <script src="/Client/JQuery/jqueryLibrary.js"></script>
+    <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>-->
+
+    <style>
+
+        .important {
+
+        font-weight:bold;
+        font-size:xx-large;
+
+        }
+
+        .blue {
+
+        color:blue;
+
+        }
+
+    </style>
+
+
+</head>
+<body>
+
+    <p class="blue">Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, sit.</p>
+    
+    <script>
+
+    $(document).ready(function(){   
+
+        /* 
+        Amb JQuery es facil manipular el CSS d'un element.
+        
+        Te multiples metodes, els mes destacats son:
+
+        1. addClass() -> Afegeix una classe a un element
+        2. removeClass() -> Elimina una classe d'un element
+        3. toggleClass() -> Conmuta entre afegir/eliminar classes de l'element seleccionat
+        4. css() -> Estableix o retorna un estil css
+
+        */
+
+
+        // 3. toggleClass() -> Conmuta entre addClass i removeClass
+        $("p").dblclick(function(){
+            $("p").toggleClass("important");
+        }); 
+
+        // 4. css() -> Pot retornar el valor d'una propietat css
+        //Retornar valor d'una propietat (posant el nom de la propietat per parametre)
+        css("propertyname");
+        //O pots assignar valor a una propietat, inclus sense que i sigui, tambe pots afegir mes d'una propietat amb la sintaxi seguent
+        css({"nomPropietat":"valorPropietat", "nomPropietat2":"valorPropietat2"})
+
+
+        //JQuery tambe fa feina amb metodes dedicats a les dimensions, son els seguents
+        /* 
+        · width()
+        • height()
+        • innerWidth()
+        • innerHeight()
+        • outerWidth()
+        • outerHeight() 
+        */
+
+
+    });
+
+
+    </script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/Client/JQuery/jqueryLibrary.js"></script>
+    <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>-->
+
+</head>
+<body>
+
+    <div class="container">
+
+        <hr>
+        
+    </div>
+
+    <hr> 
+    <input type="button" id="btn1" value="File 1">
+    <input type="button" id="btn2" value="File 2">
+    
+    <script>
+
+    $(document).ready(function(){   
+
+        //Write a Javascript script that loads the information from two different txt files (fiile1.txt, file2.txt)
+        //inside a div container using the jQuery load method depending on which of the buttons #button1 or #button2 is clicked.
+
+        $("#btn1").click(carregar1);
+        $("#btn2").click(carregar2);
+
+
+        function carregar1 () {
+            $(".container").load("file1.txt");
+        }
+
+        function carregar2 () {
+            $(".container").load("file2.txt");
+        }
+
+
+    });
+
+
+    </script>
+
+
+
+
+</body>
+</html>

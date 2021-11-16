@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/Client/JQuery/jqueryLibrary.js"></script>
+    <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>-->
+
+</head>
+<body>
+
+    <div id="div1">
+
+        <p class="p1">Lorem ipsum dolor sit amet.</p>
+        <p class="p2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, enim!</p>
+        <p class="p3">Lorem ipsum dolor sit amet.</p>
+        <p class="p4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, facere.</p>
+
+    </div>
+
+    <div id="div2" style="display: none;">
+
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi nulla cupiditate nostrum et natus error iure dolores quos perferendis a.</p>
+
+
+    </div> 
+    
+    <script>
+
+    $(document).ready(function(){   
+
+
+        //Create a DIV element with some paragraphs inside. When you press on this div,
+        //it must be hidden slowly. And when it is completely hidden, another text block must appear slowly.
+
+        $("#div1").click(amagar);
+
+
+        function amagar () {
+            $(this).hide("slow", function () {
+                $("#div2").show("slow");
+            });
+        }
+
+    });
+
+
+    </script>
+
+
+
+
+</body>
+</html>

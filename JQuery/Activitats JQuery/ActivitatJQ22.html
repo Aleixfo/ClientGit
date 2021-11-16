@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/Client/JQuery/jqueryLibrary.js"></script>
+    <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>-->
+
+    <style>
+
+        #tbl {
+            border-collapse: collapse;
+        }
+
+        .hid {
+            visibility: hidden;
+        }
+
+        .vis {
+            visibility: visible;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <table border="1" id="tbl">
+        <tr>
+          <td><img src="img/descarga.jfif" alt="Italian Trulli" id="image"></td>
+          <td><input type="button" value="Amagar Imatge" id="btn"></td>
+        </tr>
+      </table>
+    
+    <script>
+
+    $(document).ready(function(){   
+
+        /* 
+        Create a table with 1 row and 2 columns. There must be an image and a button in every cell.
+        When you press on a button cell, its image visibility must change from visible to hidden and viceversa.
+        */
+
+        $("#btn").click(amagar);
+
+
+        function amagar () {
+            $("#image").toggle()
+        }
+
+
+    });
+
+
+    </script>
+
+
+
+
+</body>
+</html>

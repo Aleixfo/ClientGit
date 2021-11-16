@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/Client/JQuery/jqueryLibrary.js"></script>
+    <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>-->
+
+</head>
+<body>
+
+    <div id="div1" style="background-color: burlywood;">
+
+        <p class="p1">Lorem ipsum dolor sit amet.</p>
+        <p class="p2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, enim!</p>
+        <p class="p3">Lorem ipsum dolor sit amet.</p>
+        <p class="p4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, facere.</p>
+
+    </div>
+
+    
+    
+    <script>
+
+    $(document).ready(function(){   
+
+
+        //Create a div with some paragraphs. When you click on the div, its opacity must be reduced to 0.20.
+        //And when you double click on the div, its opacity must be increased to 1.
+
+
+        $("div#div1").click(fadingTo);
+        $("div#div1").dblclick(fadingToo);
+
+        function fadingTo () {
+            $(this).fadeTo("slow", "0.2");
+        }
+
+        function fadingToo () {
+            $(this).fadeTo("fast", "1");
+        }
+
+
+
+    });
+
+
+    </script>
+
+
+
+
+</body>
+</html>

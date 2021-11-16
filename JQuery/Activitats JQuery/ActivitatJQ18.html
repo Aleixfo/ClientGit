@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/Client/JQuery/jqueryLibrary.js"></script>
+    <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>-->
+
+</head>
+<body>
+
+    <form id="formulari">
+
+        <input type="text" id="field">
+
+
+
+    </form>
+    <hr>
+    <input type="button" id="btnA" value="Afegir Camp de Text">
+    <input type='button' id='btn' value='Eliminar Camps'>
+    
+    <script>
+
+    $(document).ready(function(){   
+
+
+        //Create a form where you can add and remove text fields. You can use a button to create
+        //new text fields. Every text field must have its particular button to remove itself.
+
+        $("#btnA").click(afegirCamp);
+
+        $("#btn").click(eliminarCamp);
+
+
+        function afegirCamp () {
+
+            $("#formulari").append("<br><input type='text' id='field'>");
+
+        }
+
+        function eliminarCamp () {
+
+            $(":text").empty("#formulari");
+
+        }
+
+
+
+
+
+
+
+
+
+    });
+
+
+    </script>
+
+
+
+
+</body>
+</html>

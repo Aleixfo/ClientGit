@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CallBack, Chaining and Traversing</title>
+    <script src="/Client/JQuery/jqueryLibrary.js"></script>
+    <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>-->
+
+</head>
+<body>
+    
+    <script>
+
+    $(document).ready(function(){   
+
+
+        //Per fer un slide (desplaçament) tenim 3 metodes
+        /* 
+        1. slideDown() -> Desplaçament cap abaix
+        2. slideUp() -> Desplaçament cap adalt
+        3. slideToggle() -> Conmuta entre desplaçament cap abaix i cap adalt
+        */
+
+        //Aquets metodes acepten dos parametres, speed que acepta dos valors, fast, slow or milisegons, i l'altre parametre es la funcio callback
+        $(selector).slideToggle(speed,callback);
+
+
+        /* 
+        ANIMATIONS
+
+        Amb el metode animate() podem crear animacions customitzades
+        Amb el metode stop() podem aturar les enimacions i efectes abans de que haguessin d'acabar
+
+        El metode animate() acepta 3 tipos de parametres
+        1. {params} -> sintaxi parescuda al metode css, defineix les propietats css que s'han d'animar (Es pot afegir multiples propietats)
+        2. speed -> "slow", "fast" o en milisegons.
+        3. Funcio callback -> Funcio que s'executa despres de que acabi l'animacio.
+        */
+        $(selector).animate({params},speed,callback);
+        //Exemple
+        $("button").click(function(){
+            $("div").animate({
+                left:'250px',
+                opacity:'0.5',
+                height:'150px',
+                width:'150px'
+            });
+        });
+
+
+        //FUNCIO CALLBACK
+        /* 
+        Aquesta funcio s'executa despres de que l'effecte eacaba.
+        Necessitam la funcio callback quan treballem amb animacions per tal de evitar que generi
+        un error. Amb les animacions la seguent linia es pot executar sense que acabi l'efecte, aixo genera errors.
+
+        Podem solucionar aquest error amb la funcio callback
+        */
+       //Exemple de funcio amb callback al parametre
+       $("button").click(function(){
+            $("p").hide("slow",function(){
+                alert("The paragraph is now hidden");
+            });
+       });
+
+       /* 
+       Amb JQuery podem concatenar accions/metodes (chaining)
+
+       Es simplement posar una accio derrera un altre (JQuery es permissiu amb aixo)
+       La sintaxi seria la seguent
+       */
+
+       $("#p1").css("color","red").slideUp(2000).slideDown(2000);
+       //         Accio1          . Accio2      . Accio3
+       //Tambe es pot posar amb salts de linia JQuery deixa.
+       $("#p1").css("color","red")
+               .slideUp(2000)
+               .slideDown(2000);
+
+
+       /* 
+       Traversing -> Es una manera de moures entre elements pares, elements germans i elements fills
+
+       Methods Traversing Ancestors (Elements Pares)
+       1. parent() -> Retorna l'element pare de l'element seleccionat (nomes el primer pare directe)
+       2. parents() -> Retorna tots els elements pare de l'element seleccionat, fins arribar a l'element pare principal <html>
+       3. parentsUntil("element a acabar") -> Retorna tots els elements pare de l'element seleccionat fins arribar a l'element indicat al parametre.
+       */
+       $(document).ready(function(){
+           $("span").parentsUntil("div");
+       }); 
+
+       /* 
+       Methods Traversing Descendant
+       1. children() -> Retorna tots els elements fills (directes) de l'element seleccionat, nomes els fills directes, en pot tenir multiples
+       **Aquest metode acepta un parametre, a mode de filtre per tal d'identificar millor l'element fill desitjat (exemple) -> children(".class");
+       2. fins() -> Retorna els elements fills de l'element seleccionat fins arribar al final, tambe es pot filtrar.
+       ** Si volem tots els elements hem de posar ("*") al parametre de la funcio.
+
+       */
+       $(document).ready(function(){
+          $("div").find("span");
+       }); 
+
+       /* 
+       Methods traversing Germans 
+
+        · siblings() -> Retorna tots els germans de l'element seleccionat (mateix nivell jerarquic) (Amb parametre filtre)
+        • next() -> Retorna el proxim element germa de l'element seleccionat (Amb parametre filtre)
+        • nextAll() -> Retorna tots els elements germans de l'element seleccionat (SENSE FILTRE, SON TOTS)
+        • nextUntil() -> Retorna tots els elements germans de l'element seleccionat fins a l'element que posam com a parametre ex -> ("h6")
+        • prev() -> "
+        • prevAll() -> "
+        • prevUntil() -> "
+       */
+
+       /* 
+       Methods Traversing Filtering
+       
+       1. first() -> Retorna el primer element dels elements seleccionats
+       2. last() -> Retorna el darrer element dels elements seleccionats
+       3. eq(Integer) -> Retorna l'element indicat mitjançant el parametre, el primer element es un 0
+       4. filter() -> Retorna els elements indicatrs en el parametre, l'element que façi match es retornara i els que no s'eliminaran de la seleccio
+       5. not() -> Retorna els elements indicats en el parametre, l'element que façi match s'eliminara de la seleccio i el que no façi match es retornara (contrari que filter())
+       */
+
+       //filter() Exemple ->
+       $(document).ready(function(){
+           $("p").filter(".intro");
+       });
+       
+       //not() Example -> 
+       $(document).ready(function(){
+           $("p").not("intro");
+       }); 
+
+
+
+
+
+
+
+
+    });
+
+
+    </script>
+
+
+
+
+</body>
+</html>

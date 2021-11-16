@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Afegir i Eliminar Contingut JQuery</title>
+    <script src="/Client/JQuery/jqueryLibrary.js"></script>
+    <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>-->
+
+</head>
+<body>
+
+    <p id="p1">HOLA MUNDO - </p><hr>
+    <p id="p2"> - HOLA MUNDO</p><hr>
+    <p id="p3">HOLA MUNDO - </p><hr>
+    <p id="p4">HOLA MUNDO - </p><hr>
+    
+    <script>
+
+    $(document).ready(function(){   
+
+
+        /* 
+        Amb JQuery es facil afegir o eliminar elements/contingut HTML
+
+        AFEGIR CONTINGUT
+        Tenim 4 metodes principals per afegir nou contingut.
+
+        1. append() -> Inserta contingut al final
+        2. prepend() ->  Inserta el contingut al principi
+        3. after() -> Inerta el contingut despres dels elements seleccionats
+        4. before() -> Inserta el contingut antes dels elements seleccionats
+        */
+
+        // 1. append() -> Inserta contingut al final
+        $("#p1").append("Text a afegir al final");
+
+        // 2. prepend() -> Inserta el contingut al principi
+        $("#p2").prepend("Text a afegir al principi", " - I AIXO TAMBE", "<strong> QUE PASA </strong>")
+
+        // 3. after() -> Inserta el contingut despres dels elements seleccionats
+        $("#p3").after("<p class='paragraf'>AIXO ES Una prova</p>")
+
+        // 4. before() -> Inserta el contingut abans dels elements seleccionats
+        $("#p4").before("<hr class='hrrrr'>","<h3>HOLA LUNA</h3");
+
+        //En aquets 4 metodes es poden afegir mes d'un string si separam amb coma com en els exemples anteriors.
+
+
+        /* 
+        ELIMINAR CONTINGUT
+
+        Tenim 2 metodes principals per eliminar contingut
+        
+        1. remove() -> Elimina l'element seleccionat i tots els seus elements fills
+        2. empty() -> Elimina nomes els elements fills de l'element seleccionat (buida l'element pero no l'elimina)
+        
+        */
+
+        $("#p1").remove(); //Elimina tot
+        $("#p2").empty(); //Deixa l'etiqueta <p></p> pero buida
+
+        //El metode remove acepta un parametre on pots filtrar per l'element que vols eliminar
+        //Exemple
+        $("hr").remove(".hrrrr"); //Eliminara el hr amb classe hrrrr
+
+
+
+
+
+
+
+
+
+    });
+
+
+    </script>
+
+
+
+
+</body>
+</html>

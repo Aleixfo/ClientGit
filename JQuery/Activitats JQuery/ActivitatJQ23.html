@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/Client/JQuery/jqueryLibrary.js"></script>
+    <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>-->
+
+</head>
+<body>
+
+    <ul>
+        <li>
+
+            <a href="google.com">Google</a>
+
+        </li>
+        <li>
+            
+            <a href="youtube.es">Youtube.es</a>
+
+        </li>
+        <li>
+            
+            <a href="twitch.es">Twitch</a>
+
+        </li>
+        <li>
+            
+            <a href="google.com">Facebook</a>
+
+        </li>
+        <li>
+            
+            <a href="google.com">Instagram</a>
+
+        </li>
+    </ul>
+    
+    <script>
+
+    $(document).ready(function(){   
+
+
+        //Create a page with a list of links (<a>). Create a script to highlight all the links to subdomains .es. Use the indexOf String method.
+
+        $("ul").each(remarcar);
+
+        function remarcar () {
+
+            if($(this).indexOf()){
+                $(this).css("background-color", "red");
+            }
+        }
+
+
+    });
+
+
+    </script>
+
+
+
+
+</body>
+</html>
