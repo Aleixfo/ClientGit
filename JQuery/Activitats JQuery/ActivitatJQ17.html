@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/Client/JQuery/jqueryLibrary.js"></script>
+    <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>-->
+
+</head>
+<body>
+    
+    <input type="text" id="input1" class="field">
+
+    <script>
+
+    $(document).ready(function(){   
+
+
+        /* 
+        Create a form with a text field (input type="text"). When this field loses the focus and
+        its content is empty, an alert message "Field can't be empty" must be shown.
+        */
+
+        $("input").blur(onBlur);
+
+    
+        function onBlur () {
+           if( !$(this).val() ) {
+                alert("Field can't be empty");
+           }
+        }
+
+
+
+
+
+
+
+
+
+
+
+    });
+
+
+    </script>
+
+
+
+
+</body>
+</html>

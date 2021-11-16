@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/Client/JQuery/jqueryLibrary.js"></script>
+    <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>-->
+
+
+    <style>
+
+        .field {
+            color: blue;
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <form>
+
+        <input type="text" id="input1" class="field">
+        <input type="text" id="input2" class="field">
+
+
+    </form>
+
+
+    <script>
+
+    $(document).ready(function(){   
+
+        //Create a web page with two text elements (input type="text") in a form. Set their font colour to blue.
+        //When an input element get the focus, its font colour must change to red.
+
+        
+        $("input").focus(enFocus);
+        $("input").blur(enBlur);
+
+    
+        function enFocus () {
+            $(this).css("color", "red");
+        }
+
+        function enBlur () {
+            $(this).css("color", "blue");
+        }
+
+
+
+    });
+
+
+    </script>
+
+
+
+
+</body>
+</html>

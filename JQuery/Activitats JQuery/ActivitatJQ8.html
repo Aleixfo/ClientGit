@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/Client/JQuery/jqueryLibrary.js"></script>
+    <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>-->
+
+    <style>
+
+        .th {
+            background-color: green;
+        }
+
+        .td {
+            font-size: 30px;
+        }
+
+        .test {
+            padding: 0;
+        }
+
+
+    </style>
+
+</head>
+<body>
+
+    <table>
+        <tr class="th test">
+        <th>Titol</th>
+        <th>ID</th>
+    </tr>
+    </th>
+        <tr class="td test">
+            <td>Hola</td>
+            <td>001</td>
+        </tr>
+    </table>
+    <hr>
+    <input type="button" value="Combinar th" id="bt1">
+    <input type="button" value="Descombinar td" id="bt2">
+    
+    <script>
+
+    $(document).ready(function(){   
+
+        /*
+        Create a web page with a table. Define two styles, one for the <thead> section and
+        the other for the <tbody> section. Using two buttons link and unlink the two styles or classes.
+        */
+
+
+            $("#bt1").click(combinarTh);
+
+            $("#bt2").click(desCombinarTh);
+
+
+
+            function combinarTh () {
+                $("tr.th").addClass("td");
+                $("tr.td").addClass("th");
+            };
+
+            function desCombinarTh () {
+                $("tr.th").removeClass("td"),
+                $("tr.td").removeClass("th");
+            };
+
+
+
+
+
+    });
+
+
+    </script>
+
+
+
+
+</body>
+</html>

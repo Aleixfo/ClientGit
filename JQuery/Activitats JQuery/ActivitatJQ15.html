@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/Client/JQuery/jqueryLibrary.js"></script>
+    <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>-->
+
+    <style>
+
+        .llarg {
+            background-color: grey;
+            height: 70px;
+            width: 800px;
+        }
+
+        .quadrat {
+            background-color: grey;
+            height: 250px;
+            width: 250px;
+        }
+
+    </style>
+
+
+</head>
+<body>
+
+    <div id="divP" style="background-color: grey;">HOLA</div>
+    
+    <script>
+
+    $(document).ready(function(){   
+
+
+        /*
+         Create a web page with a div of 800x70 pixels. When you double-click over this div,
+         it must be re-sized to 250x250 pixels, and if you double-click again the div munst return to its original size (800x70).
+        */
+
+
+        $("div").dblclick(
+
+            function (){
+                $(this).css({"height":"250px", "width":"250px"});
+            }
+        );
+
+        //COM SE FA SA SEQUENCIA DE DOBLESCLICKS?
+
+
+    
+    });
+
+
+    </script>
+
+
+
+
+</body>
+</html>

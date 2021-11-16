@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/Client/JQuery/jqueryLibrary.js"></script>
+    <style>
+
+        table {
+            border: 2px solid black;
+            border-collapse: collapse;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <table class="tb1">
+        <tr>
+            <td>OFF</td>
+            <td>OFF</td>
+            <td>OFF</td>
+        </tr>
+        <tr>
+            <td>OFF</td>
+            <td>OFF</td>
+            <td>OFF</td>
+        </tr>
+        <tr>
+            <td>OFF</td>
+            <td>OFF</td>
+            <td>OFF</td>
+        </tr>
+    </table>
+    <hr>
+    <table class="tb2">
+        <tr>
+            <td>OFF</td>
+            <td>OFF</td>
+            <td>OFF</td>
+        </tr>
+        <tr>
+            <td>OFF</td>
+            <td>OFF</td>
+            <td>OFF</td>
+        </tr>
+        <tr>
+            <td>OFF</td>
+            <td>OFF</td>
+            <td>OFF</td>
+        </tr>
+    </table>
+    <hr>
+    <input type="button" value="Taula 1" id="btnt1">
+    <input type="button" value="Taula 2" id="btnt2">
+    
+    <script>
+
+    //a) Create a web page with two tables. Every table has 3 rows and 3 columns, and every
+    // cell has the same text "OFF". When we press a button the text inside the first table must change to "ON", but the second table mustn’t change at all.
+
+    $(document).ready(function(){ 
+
+        $("#btnt1").click(
+
+            function () {
+
+                $(".tb1 td").text("ON");
+
+            }
+
+
+        );
+
+        //Amb funcio callback, te dos parametres i, originText (text original)
+        $("#btnt2").click(
+
+            function () {
+
+                $(".tb2 td").text(
+
+                    function(i, orgnText){
+                        return "ON";
+                    }
+                    
+                );
+
+            }
+
+
+        );
+
+
+
+
+
+
+
+    });
+
+
+    </script>
+
+
+
+
+</body>
+</html>
