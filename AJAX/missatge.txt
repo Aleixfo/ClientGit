@@ -1,0 +1,22 @@
+<h1>HOLA AJAX</h1>
+<p>Load JQuery</p>
+
+
+
+
+<script>
+
+    $(#b1").click(function(){
+        $.get('hola.php?user=PACO', function(data, status){
+            $("#d1").html(data);
+        });
+    });
+
+    $(#b2").click(function(){
+        $.get('hola.php", {"user":"PACO"}, function(data, status){
+            $("#d1").html(data);
+        });
+    });
+
+</script>
+

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>PHP AJAX</title>
+</head>
+
+<body>
+
+    <input id="t1" type="text" name="q" onkeyup="agafaHint();" />
+    <p>Suggestions: <span id="txtHint"></span></p>
+<script>
+
+    function agafaHint() {
+
+        //Cream objecte XMLHttpRequest
+        var xhttp = new XMLHttpRequest();
+
+        xhttp.onreadystatechange = function() {
+
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("txtHint").innerHTML = this.responseText;
+            }
+
+        };
+        var info = document.getElementById("t1").value;
+        //L'hi hem de pasar la variable que passa per GET -> gethint.php?q
+        xhttp.open("GET", "gethint.php?q="+info, true);
+        xhttp.send();
+
+    }
+
+
+
+</script>
+</body>
+</html>

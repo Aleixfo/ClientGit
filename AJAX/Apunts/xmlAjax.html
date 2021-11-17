@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<style>
+table,th,td {
+  border : 1px solid black;
+  border-collapse: collapse;
+}
+th,td {
+  padding: 5px;
+}
+</style>
+
+<body>
+
+<h2>The XMLHttpRequest Object</h2>
+
+<select id="s1">
+
+    <option value="All">All Artists</option>
+    <option value="Bob Dylan">Bob Dylan</option>
+    <option value="Dolly Parton">Dolly Parton</option>
+
+</select>
+
+<button type="button" onclick="loadDoc()">Get my CD collection</button>
+
+<br><br>
+
+<table id="demo" border="1"></table>
+
+<script>
+
+    function loadDoc() {
+
+        //Cream objecte XMLHttpRequest
+        var xhttp = new XMLHttpRequest();
+
+        xhttp.onreadystatechange = function() {
+
+            if (this.readyState == 4 && this.status == 200) {
+                var s = document.getElementById("s1").value;
+                creaTaula(xhttp, s);
+            }
+
+        };
+        
+        xhttp.open("GET", "cataleg.xml", true);
+        xhttp.send();
+
+    }
+
+    function creaTaula(xhttp, s) {
+
+        //Amb l'objecte XML feim getElementByTagName("TAG")
+        var xml = xhttp.responseXML;
+        var cds = xml.getElementsByTagName("CD");
+        
+        for (var i = 0; i < cds.length; i++){
+
+            var nom = cds[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue;
+            var titol = cds[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue;
+            var pais = cds[i].getElementsByTagName("COUNTRY")[0].childNodes[0].nodeValue;
+            var fila = "<tr><td>" + nom + "</td><td>" + titol + "</td></tr>";
+            
+            if (s == "All" || s == pais){
+
+                var txt = "";
+                txt += fila;
+                
+            }
+            
+        }
+        document.getElementById("demo").innerHTML = txt;
+    
+    }
+
+</script>
+</body>
+</html>
