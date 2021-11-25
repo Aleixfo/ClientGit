@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>AJAX BBDD</title>
+    
+</head>
+
+<body onload="carregarCases();">
+
+    <h2>Consulta a BBDD</h2>
+    <br>
+    <select id="cases" style="width: 200px;height: 50px;background-color: rgb(226, 149, 159);"></select>
+    <br><br><hr>
+
+<script>
+
+
+
+    function carregarCases() {
+    
+        //Cream objecte httpRequest (AJAX)
+	    var xhttp = xhttp = new XMLHttpRequest();
+
+        //Li dei que quan i hagi un canvi executi la funcio de callback
+        xhttp.onreadystatechange = function() { 
+
+            //Contingut funcio callback
+
+            //Si tot esta be
+            if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("cases").innerHTML=this.responseText;
+            }
+
+        };
+
+        xhttp.open("GET", "consultaBBDD.php", true);
+        xhttp.send();
+
+	}
+
+</script>
+
+</body>
+</html>

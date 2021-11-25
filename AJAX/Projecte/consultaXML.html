@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>XML SELECT CASA</title>
+    <script>
+
+        function agafarCasa(xml) {
+
+            var xmlDoc = xml.responseXML; //El metode responseXML retorna un HTML o XML o null en cas de no retornar res
+            var i;
+            var select=""; 
+            var x = xmlDoc.getElementsByTagName("casa");
+
+            for (i = 0; i <x.length; i++) { 
+
+                select += "<option>" + x[i].getElementsByTagName("nom")[0].childNodes[0].nodeValue + "</option><hr>";
+                //table += "<li>" + x[i].getElementsByTagName("id")[0].childNodes[0].nodeValue + "</li><li>" + x[i].getElementsByTagName("nom")[0].childNodes[0].nodeValue + "</li><hr>";
+
+            }
+
+            document.getElementById("select").innerHTML = select;
+        }
+
+    </script>
+
+</head>
+<!-- BODY -->
+<body onload= "carregarXML();" >
+
+    <h1>BOOKING IESMANACOR</h1>
+
+    <!-- Llista on Carregaran les cases -->
+    <form id="llistaCases">
+        
+        <label for="select">Tria una casa</label>
+        <br>
+        <br>
+        <select id="select" name="cases" style="width: 200px;height: 50px;background-color: rgb(226, 149, 159);"></select>
+        <br>
+        <br>
+        <input type="submit" value="Llogar" style="height: 30px;width: 100px;">
+
+    </form>
+ 
+<!-- Cosi JavaScript -->
+<script>
+
+	function carregarXML() {
+
+        //Cream objecte httpRequest
+		var xhttp = xhttp = new XMLHttpRequest();
+
+        //Li dei que quan i hagi un canvi executi la funcio de callback
+		xhttp.onreadystatechange = function() {
+
+            //Si tot esta correcte
+			if (this.readyState == 4 && this.status == 200) {
+                //Executa la funcio agafarCasa(xml)
+                agafarCasa(this);
+  			}
+
+		};
+
+        //I els metodes de conexio, recorda que no val nomes amb open(), necessitam el send despres.
+		xhttp.open("GET", "cases.xml", true); //Passa per GET al fitxes cases.xml i de forma asyncrona
+		xhttp.send();
+
+	}
+
+</script>
+
+</body>
+
+</html>

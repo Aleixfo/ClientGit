@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Etiqueta general -->
+<cases>
+
+    <!-- CASA -->
+    <casa>
+    
+        <id> 1 </id>
+
+        <nom> Casa Lina </nom>
+
+        <poblacio> Manacor </poblacio>
+
+        <!-- Caracterustuqyes -->
+        <caracteristiques>
+
+            <plaçes> 6 </plaçes>
+
+            <habitacions> 3 </habitacions>
+
+            <banys> 2 </banys>
+
+            <cuina> Si (Gran) </cuina>
+
+            <piscina> No </piscina>
+
+            <wifi> Si </wifi>
+        
+        </caracteristiques>
+    
+    </casa>
+
+    <!-- CASA -->
+    <casa>
+    
+        <id> 2 </id>
+
+        <nom> Son Sis </nom>
+
+        <poblacio> Artà </poblacio>
+
+        <!-- Caracterustuqyes -->
+        <caracteristiques>
+
+            <plaçes> 10 </plaçes>
+
+            <habitacions> 6 </habitacions>
+
+            <banys> 4 </banys>
+
+            <cuina> Si (2) </cuina>
+
+            <piscina> Si </piscina>
+
+            <wifi> Si </wifi>
+        
+        </caracteristiques>
+    
+    </casa>
+
+    <!-- CASA -->
+    <casa>
+    
+        <id> 3 </id>
+
+        <nom> Can Roca </nom>
+
+        <poblacio> Petra </poblacio>
+
+        <!-- Caracterustuqyes -->
+        <caracteristiques>
+
+            <plaçes> 4 </plaçes>
+
+            <habitacions> 2 </habitacions>
+
+            <banys> 1 </banys>
+
+            <cuina> Si </cuina>
+
+            <piscina> No</piscina>
+
+            <wifi> No </wifi>
+        
+        </caracteristiques>
+    
+    </casa>
+
+    <!-- CASA -->
+    <casa>
+    
+        <id> 4 </id>
+
+        <nom> Villa Playa </nom>
+
+        <poblacio> Llucmajor </poblacio>
+
+        <!-- Caracterustuqyes -->
+        <caracteristiques>
+
+            <plaçes> 5 </plaçes>
+
+            <habitacions> 4 </habitacions>
+
+            <banys> 2 </banys>
+
+            <cuina> Si </cuina>
+
+            <piscina> No </piscina>
+
+            <wifi> Si </wifi>
+        
+        </caracteristiques>
+    
+    </casa>
+
+    <!-- CASA -->
+    <casa>
+    
+        <id> 5 </id>
+
+        <nom> Sa Cova </nom>
+
+        <poblacio> Palma </poblacio>
+
+        <!-- Caracterustuqyes -->
+        <caracteristiques>
+
+            <plaçes> 4 </plaçes>
+
+            <habitacions> 3 </habitacions>
+
+            <banys> 1 </banys>
+
+            <cuina> No </cuina>
+
+            <piscina> Si </piscina>
+
+            <wifi> No </wifi>
+        
+        </caracteristiques>
+    
+    </casa>
+
+    
+
+
+
+
+
+
+
+
+
+
+</cases>

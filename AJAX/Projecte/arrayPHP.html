@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>PHP AJAX</title>
+</head>
+
+<body>
+    <h1>Llistar Cases Desde Un Array PHP</h1>
+    <label for="inputText">Cerca</label>
+    <input id="inputText" type="text" name="input" onkeyup="agafaHint();" />
+
+    <h2>Resultat</h2>
+    <hr>
+    <div id="llistaCases"></div>
+
+<script>
+
+    function agafaHint() {
+
+        //Cream objecte XMLHttpRequest
+        var xhttp = new XMLHttpRequest();
+
+        xhttp.onreadystatechange = function() {
+
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("llistaCases").innerHTML = this.responseText;
+            }
+
+        };
+        var info = document.getElementById("inputText").value;
+
+        //L'hi hem de pasar la variable que passa per GET -> gethint.php?q
+        xhttp.open("GET", "arrayPHP.php?input="+info, true);
+        xhttp.send();
+
+    }
+
+</script>
+</body>
+</html>
