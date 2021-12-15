@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="producte.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <style>
+        .Portatil {
+            color: red;
+        }
+        
+        .SobreTaula {
+            color: green;
+        }
+        
+        .Mobil {
+            color: blue;
+        }
+        
+        .Tablet {
+            color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    Referencia: <input type="text" id="inputref" /><br/> Nom: <input type="text" id="inputnom" /><br/> Marca: <select id="selectmarca">
+				<option value="Apple">Apple</option>
+				<option value="Samsung">Samsung</option>
+				<option value="xiaomi">Xiaomi</option>
+			</select><br/> Categoria: <select id="selectcategoria">
+				<option value="Portatil">Portatil</option>
+				<option value="SobreTaula">SobreTaula</option>
+				<option value="Mobil">Mòbil</option>
+				<option value="Tablet">Tablet</option>
+			</select><br/> PVP: <input type="number" id="inputpvp" /><br/>
+    <hr/>
+    <button id="b1">Add Product</button>
+    <button id="b2">Print List</button>
+    <button id="b3">Remove Product</button>
+    <button id="b4">Filter by Category</button>
+    <button id="b5">Order by Price Asc</button>
+    <button id="b6">Order by Price Desc</button>
+    <button id="b7">Sum Up</button>
+    <button id="b8">Discount 10%</button>
+    <button id="b9">Edit Product</button>
+    <h2>Shopping List</h2>
+    <select id="listRefs"></select>
+    <ol id="myList">
+    </ol>
+    <script>
+        var saldo = 2000;
+        var productes = [];
+
+        productes.push(new Producte("1124", "Iphone XS", "Apple", "Mobil", 1200));
+        productes.push(new Producte("1147", "Samsung L9", "Samsung", "Mobil", 900));
+        productes.push(new Producte("1155", "iPad Pro", "Apple", "Tablet", 800));
+
+        function createOptions() {
+            $("#listRefs").empty();
+            for (var i = 0; i < productes.length; i++) {
+                var rp = productes[i].ref;
+                var o = $("<option>").attr("value", rp).text(rp);
+                $("#listRefs").append(o);
+            }
+        }
+
+        createOptions();
+
+        $(document).ready(function() {
+
+            function createProduct() {
+
+                var r = $("#inputref").val();
+                var n = $("#inputnom").val();
+                var m = $("#selectmarca").val();
+                var c = $("#selectcategoria").val();
+                var p = $("#inputpvp").val();
+
+                var producte = new Producte(r, n, m, c, p);
+                return producte;
+            }
+
+
+
+
+            function printList(cat) {
+                $("#myList").empty();
+                for (var i = 0; i < productes.length; i++) {
+                    var info = productes[i].print();
+                    var liClass = productes[i].categ;
+                    var newLI = $("<li>").text(info).addClass(liClass); // var newLI = "<li>".info."</li>";
+
+                    if (cat == productes[i].categ || cat == "TOTS") {
+                        $("#myList").append(newLI);
+                    }
+                }
+            }
+
+            $("#b1").click(function() {
+                var p = createProduct();
+                var t = total();
+                var nt = parseInt(t) + parseInt(p.pvp);
+                var repetit = jaHiEs(p.ref);
+
+                if (nt < saldo && !repetit) {
+                    productes.push(p);
+                    createOptions();
+                } else {
+                    alert("NO MONEY ENOUGH or REPEATED REF");
+                }
+                printList("TOTS");
+            });
+
+            $("#b2").click(function() {
+                printList("TOTS");
+            });
+
+            $("#b3").click(function() {
+                var r = $("#inputref").val();
+                var b = 0;
+                for (var i = 0; i < productes.length; i++) {
+                    var rp = productes[i].ref;
+                    if (r == rp) {
+                        productes.splice(i, 1);
+                        b = 1;
+                    }
+                }
+                printList();
+                createOptions();
+                if (b == 0) {
+                    alert("NO HI HA CAP PRODUCTE AMB AQUESTA REF.");
+                }
+            });
+
+            $("#b4").click(function() {
+                var c = $("#selectcategoria").val();
+                printList(c);
+            });
+
+            $("#b5").click(function() {
+                productes.sort(function(a, b) {
+                    return a.pvp - b.pvp;
+                });
+                printList("TOTS");
+            });
+
+            $("#b6").click(function() {
+                productes.sort(function(a, b) {
+                    return b.pvp - a.pvp;
+                });
+                printList("TOTS");
+            });
+
+            $("#b7").click(function() {
+                var t = total();
+                alert("TOTAL: " + t + "€.")
+            });
+
+            $("#b8").click(function() {
+                for (var i = 0; i < productes.length; i++) {
+                    productes.discount(0.9); // Discount 10%
+                }
+                printList("TOTS");
+            });
+
+            $("#b9").click(function() {
+                var r = $("#listRefs").val();
+                for (var i = 0; i < productes.length; i++) {
+                    if (r == productes[i].ref) {
+                        productes[i].nom = $("#inputnom").val();
+                        productes[i].marca = $("#selectmarca").val();
+                        productes[i].categ = $("#selectcategoria").val();
+                        productes[i].pvp = $("#inputpvp").val();
+                    }
+                }
+                printList("TOTS");
+            });
+
+            function total() {
+                var total = 0;
+                for (var i = 0; i < productes.length; i++) {
+                    total += productes[i].pvp;
+                }
+                return total;
+            }
+
+            function jaHiEs(ref) {
+                for (var i = 0; i < productes.length; i++) {
+                    if (productes[i].ref == ref) {
+                        return true;
+                    }
+                }
+                return false;
+            }
+
+
+        });
+    </script>
+</body>
+
+</html>
