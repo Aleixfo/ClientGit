@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--
+
+        JSON es un format de text que s'utilitza per enviar i processar dades entre el client i el servidor.
+
+        Es mes optim que el format XML
+
+        La seva sintaxi es la seguent
+
+        { 
+            "nom":"Aleix", -> STRING
+            "edad": 24, -> INT
+            "cotxos": ["Polo", "Furgoneta"], -> ARRAY
+            "equip": {        
+                        "lider":"Aleix", -> OBJECTE
+                        "posicio":3
+                      },
+            "majoredad":true -> BOOLEA
+        }
+
+        Apart de els tipos normals de dada json admet altres funcions javascript, objectes js i nulls.
+
+        Iterar amb un fitxer JSON.
+        S'accedeix al valor a traves de la clau (normalment, es pot accedir a traves del valor directament tambe)
+
+        Accedir a un array -> var x = myObj.cotxos[1];
+        Accedir a un objecte -> 
+
+        Iterar un array ->
+        Iterar un objecte -> 
+
+        Al rebre les dades del servidor estan en format de text (string) per
+        lo que es necessari fer un parse() per convertir les dades a objectes javascript.
+
+        Convertir text a objecte en javascript (El text ha destar en format JSON)
+        var obj = JSON.parse('{ "name":"Aleix", "age":24 }');
+
+        obj sera un objecte per lo tant podrem accedir als seus atributs de forma senzilla.
+
+        Per lo tant utilitzant ajax podem pasar un json desde el servidor i accedir a les seves dades fent un parse
+        i retornant les dades a traves de AJAX
+        -----------------------------------------------------
+        var xmlhttp = new XMLHttpRequest();
+
+        xmlhttp.onreadystatechange = function() {
+
+            if (this.readyState == 4 && this.status == 200) {
+
+                var myObj = JSON.parse(this.responseText);
+
+                document.getElementById("demo").innerHTML = myObj.name;
+
+            }
+        };
+
+        xmlhttp.open("GET", "json_demo.txt", true);
+        xmlhttp.send();
+        ------------------------------------------------------
+
+        Per convertir un objecte javascript a json s'ha d'utilitzar el metode stringify()
+
+        var obj = new Object;
+        var myJSON = JSON.stringify(obj);
+
+        Convertira l'objecte a un string en format JSON a.k un .json
+
+
+
+
+
+
+
+
+
+
+
+     -->
+</body>
+
+</html>

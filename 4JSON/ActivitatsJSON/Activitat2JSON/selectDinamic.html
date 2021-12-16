@@ -17,9 +17,13 @@ Afegir estils Bootstrap input-group i custom-select.
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" />
+    <!-- LLIBRERIA JQUERY -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <!-- LLIBRERIA AJAX -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <!-- JAVASCRIPT DE BOOSTRAP -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
     <title>Select JSON</title>
 </head>
 
@@ -56,16 +60,17 @@ Afegir estils Bootstrap input-group i custom-select.
 
                     $("#demo").html(this.responseText);
 
-                    var carroceries = JSON.parse(this.responseText);
+                    var cotxos = JSON.parse(this.responseText);
+                    console.log(cotxos);
 
-                    for (c in carroceries) {
+                    for (c in cotxos) {
 
-                        var idCarro = carroceries[c].id;
-                        var nomCarro = carroceries[c].nom;
+                        var idCarro = cotxos[c].matricula;
+                        var modelCarro = cotxos[c].model;
 
                         var item = $("<option/>", {
                             value: idCarro,
-                            text: nomCarro
+                            text: modelCarro
                         });
 
                         $("#meuSelect").append(item);
